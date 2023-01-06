@@ -1,79 +1,88 @@
-import React from "react";
-import '../css/user.css'
-import '../css/user'
+import React, { useState } from "react";
+import '../css/user.css';
 
 function Signin(){
 
+   
+    const [signupmode,changeSignupMode] = useState('');
+    const containerClass = 'container ' + signupmode;
+    const ChangeToSignupMode=()=>{
+        changeSignupMode('sign-up-mode');
+    }
 
+    const ChangeToSignInMode=()=>{
+        changeSignupMode('');
+    }
+    
 return(
     <>
-        <div class="container">
-      <div class="forms-container">
-        <div class="signin-signup">
-          <form action="#" class="sign-in-form">
-            <h2 class="title">Sign in</h2>
-            <div class="input-field">
-              <i class="fas fa-user"></i>
+        <div className={containerClass}>
+      <div className="forms-container">
+        <div className="signin-signup">
+          <form action="#" className="sign-in-form">
+            <h2 className="title">Sign in</h2>
+            <div className="input-field">
+              <i className="fas fa-user"></i>
               <input type="text" placeholder="Username" />
             </div>
-            <div class="input-field">
-              <i class="fas fa-lock"></i>
+            <div className="input-field">
+              <i className="fas fa-lock"></i>
               <input type="password" placeholder="Password" />
             </div>
-            <input type="submit" value="Login" class="btn solid" />
-            <p class="social-text">Or Sign in with social platforms</p>
+            <input type="submit" value="Login" className="btn solid" />
+            <p className="social-text">Or Sign in with social platforms</p>
  
           </form>
-          <form action="#" class="sign-up-form">
-            <h2 class="title">Sign up</h2>
-            <div class="input-field">
-              <i class="fas fa-user"></i>
+          <form action="#" className="sign-up-form">
+            <h2 className="title">Sign up</h2>
+            <div className="input-field">
+              <i className="fas fa-user"></i>
               <input type="text" placeholder="Username" />
             </div>
-            <div class="input-field">
-              <i class="fas fa-envelope"></i>
+            <div className="input-field">
+              <i className="fas fa-envelope"></i>
               <input type="email" placeholder="Email" />
             </div>
-            <div class="input-field">
-              <i class="fas fa-lock"></i>
+            <div className="input-field">
+              <i className="fas fa-lock"></i>
               <input type="password" placeholder="Password" />
             </div>
-            <div class="input-field">
-              <i class="fas fa-lock"></i>
+            <div className="input-field">
+              <i className="fas fa-lock"></i>
               <input type="text" placeholder="Number" />
             </div>
-            <input type="submit" class="btn" value="Sign up" />
-            <p class="social-text">Or Sign up with social platforms</p>
+            <input type="submit" className="btn" value="Sign up" />
+            <p className="social-text">Or Sign up with social platforms</p>
          
           </form>
         </div>
       </div>
 
-      <div class="panels-container">
-        <div class="panel left-panel">
-          <div class="content">
+      <div className="panels-container">
+        <div className="panel left-panel">
+          <div className="content">
             <h3>New here ?</h3>
             <p>
       
             </p>
-            <button class="btn transparent" id="sign-up-btn">
+            <button className="btn transparent" onClick={ChangeToSignupMode}>
               Sign up
             </button>
           </div>
-          <img src="img/log.svg" class="image" alt="" />
+          <img src="img/log.svg" className="image" alt="" />
         </div>
-        <div class="panel right-panel">
-          <div class="content">
+        <div className="panel right-panel">
+          <div className="content">
             <h3>One of us ?</h3>
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum
               laboriosam ad deleniti.
             </p>
-            <button class="btn transparent" id="sign-in-btn">
+            <button className="btn transparent" id="sign-in-btn" onClick={ChangeToSignInMode}>
               Sign in
             </button>
           </div>
-          <img src="img/register.svg" class="image" alt="" />
+          <img src="img/register.svg" className="image" alt="" />
         </div>
       </div>
     </div>
